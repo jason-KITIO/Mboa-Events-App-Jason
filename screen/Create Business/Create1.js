@@ -1,6 +1,13 @@
-import { Button, Text, View, Image, StyleSheet, TouchableOpacity, ScrollView, TextInput, Animated } from 'react-native';
+import {
+    Button, Text,
+    View, Image,
+    StyleSheet, TouchableOpacity,
+    ScrollView, TextInput,
+    Animated, Switch
+} from 'react-native';
 import React, { useState } from 'react';
 import { useFonts } from 'expo-font';
+
 
 const Create2 = require('./Create2')
 import Musique from '../../assets/img/Vector (2)'
@@ -9,8 +16,15 @@ import Nouriture from '../../assets/img/685352'
 import Calendar_edit from '../../assets/img/calendar-edit'
 import Document_upload from '../../assets/img/document-upload'
 import Map from '../../assets/img/map'
+import Juste from '../../assets/img/Vector (3)'
 
-function Feed({ navigation },) {
+import CustomTextInput from '../components/input'
+import Vignette from '../components/Vignette'
+import SousVignette from '../components/SousVignette'
+import Lien from '../components/lien'
+import Bouton from '../components/bouton'
+
+function Create1({ navigation },) {
     const [fontsLoaded] = useFonts({
         'TitilliumWeb-Regular': require('../../assets/fonts/Titillium_Web/TitilliumWeb-Regular.ttf'),
         'TitilliumWeb-Bold': require('../../assets/fonts/Titillium_Web/TitilliumWeb-Bold.ttf'),
@@ -46,10 +60,16 @@ function Feed({ navigation },) {
         outputRange: [0, 8]
     });
 
+    const [isChecked, setIsChecked] = useState(false);
+
+    const handleCheckboxPress = () => {
+        setIsChecked(!isChecked);
+    };
+
     return (
         <ScrollView showsVerticalScrollIndicator={false} style={styles.page}>
             <View style={styles.categorie}>
-                <Text style={styles.titre}>Catégorie d’évènement</Text>
+                <Text style={styles.titre}>Catégorie d'évènement</Text>
 
                 <ScrollView showsHorizontalScrollIndicator={false} horizontal={true} style={{
                     // backgroundColor: 'red',
@@ -71,153 +91,215 @@ function Feed({ navigation },) {
                         <Text style={styles.categorie_menu_titre}>Nourritures</Text>
                     </View>
                 </ScrollView>
+            </View>
 
+            <View style={styles.column}>
+                <Text style={styles.titre}>Nom de l'établissement</Text>
+                <CustomTextInput />
+            </View>
+            <View style={styles.column}>
+                <Text style={styles.titre}>Description</Text>
+                <TextInput
+                    style={[styles.input, styles.textArea]}
+                    placeholder="Tapez la description ici"
+                    multiline={true} // Permet le texte multi-ligne
+                    numberOfLines={4} // Nombre de lignes visibles
+                    textAlignVertical="top" // Aligne le texte en haut
+                />
+            </View>
+            <View style={styles.column}>
+                <Text style={styles.titre}>Horaires d’ouvertures</Text>
                 <View style={styles.column}>
-                    <Text style={styles.titre}>Nom de l'établissement</Text>
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Ex: Mariage de Aline & Christian"
-                    />
-                </View>
-                <View style={styles.column}>
-                    <Text style={styles.titre}>Description</Text>
-                    <TextInput
-                        style={[styles.input, styles.textArea]}
-                        placeholder="Tapez la description ici"
-                        multiline={true} // Permet le texte multi-ligne
-                        numberOfLines={4} // Nombre de lignes visibles
-                        textAlignVertical="top" // Aligne le texte en haut
-                    />
-                </View>
-                <View>
-                    <Text style={styles.titre}>Horaires d’ouvertures</Text>
-                    <View style={styles.column}>
-                        <View style={styles.horaires_view}>
-                            <TouchableOpacity style={[styles.horaires, styles.horaires_date]} onPress={handleToggle}>
-                                <Text style={styles.titre}>Lundi</Text>
-                                <TouchableOpacity style={styles.toggleButton} onPress={handleToggle}>
-                                    <Animated.View style={[styles.toggleTrack, { backgroundColor: trackColor }]} />
-                                    <Animated.View
-                                        style={[
-                                            styles.toggleCircle,
-                                            { backgroundColor: circleColor, transform: [{ translateX }] }
-                                        ]}
-                                    />
-                                </TouchableOpacity>
+                    <View style={styles.horaires_view}>
+                        <TouchableOpacity style={[styles.horaires, styles.horaires_date]} onPress={handleToggle}>
+                            <Text style={styles.titre}>Lundi</Text>
+                            <TouchableOpacity style={styles.toggleButton} onPress={handleToggle}>
+                                <Animated.View style={[styles.toggleTrack, { backgroundColor: trackColor }]} />
+                                <Animated.View
+                                    style={[
+                                        styles.toggleCircle,
+                                        { backgroundColor: circleColor, transform: [{ translateX }] }
+                                    ]}
+                                />
                             </TouchableOpacity>
-                            <View style={styles.horaires}>
-                                <Text style={styles.horaires_texte}>08h00-18h00</Text>
-                                <Calendar_edit />
-                            </View>
+                        </TouchableOpacity>
+                        <View style={styles.horaires}>
+                            <Text style={styles.horaires_texte}>08h00-18h00</Text>
+                            <Calendar_edit />
                         </View>
-                        <View style={styles.horaires_view}>
-                            <TouchableOpacity style={[styles.horaires, styles.horaires_date]} onPress={handleToggle}>
-                                <Text style={styles.titre}>Lundi</Text>
-                                <TouchableOpacity style={styles.toggleButton} onPress={handleToggle}>
-                                    <Animated.View style={[styles.toggleTrack, { backgroundColor: trackColor }]} />
-                                    <Animated.View
-                                        style={[
-                                            styles.toggleCircle,
-                                            { backgroundColor: circleColor, transform: [{ translateX }] }
-                                        ]}
-                                    />
-                                </TouchableOpacity>
+                    </View>
+                    <View style={styles.horaires_view}>
+                        <TouchableOpacity style={[styles.horaires, styles.horaires_date]} onPress={handleToggle}>
+                            <Text style={styles.titre}>Lundi</Text>
+                            <TouchableOpacity style={styles.toggleButton} onPress={handleToggle}>
+                                <Animated.View style={[styles.toggleTrack, { backgroundColor: trackColor }]} />
+                                <Animated.View
+                                    style={[
+                                        styles.toggleCircle,
+                                        { backgroundColor: circleColor, transform: [{ translateX }] }
+                                    ]}
+                                />
                             </TouchableOpacity>
-                            <View style={styles.horaires}>
-                                <Text style={styles.horaires_texte}>08h00-18h00</Text>
-                                <Calendar_edit />
-                            </View>
+                        </TouchableOpacity>
+                        <View style={styles.horaires}>
+                            <Text style={styles.horaires_texte}>08h00-18h00</Text>
+                            <Calendar_edit />
                         </View>
-                        <View style={styles.horaires_view}>
-                            <TouchableOpacity style={[styles.horaires, styles.horaires_date]} onPress={handleToggle}>
-                                <Text style={styles.titre}>Lundi</Text>
-                                <TouchableOpacity style={styles.toggleButton} onPress={handleToggle}>
-                                    <Animated.View style={[styles.toggleTrack, { backgroundColor: trackColor }]} />
-                                    <Animated.View
-                                        style={[
-                                            styles.toggleCircle,
-                                            { backgroundColor: circleColor, transform: [{ translateX }] }
-                                        ]}
-                                    />
-                                </TouchableOpacity>
+                    </View>
+                    <View style={styles.horaires_view}>
+                        <TouchableOpacity style={[styles.horaires, styles.horaires_date]} onPress={handleToggle}>
+                            <Text style={styles.titre}>Lundi</Text>
+                            <TouchableOpacity style={styles.toggleButton} onPress={handleToggle}>
+                                <Animated.View style={[styles.toggleTrack, { backgroundColor: trackColor }]} />
+                                <Animated.View
+                                    style={[
+                                        styles.toggleCircle,
+                                        { backgroundColor: circleColor, transform: [{ translateX }] }
+                                    ]}
+                                />
                             </TouchableOpacity>
-                            <View style={styles.horaires}>
-                                <Text style={styles.horaires_texte}>08h00-18h00</Text>
-                                <Calendar_edit />
-                            </View>
+                        </TouchableOpacity>
+                        <View style={styles.horaires}>
+                            <Text style={styles.horaires_texte}>08h00-18h00</Text>
+                            <Calendar_edit />
                         </View>
-                        <View style={styles.horaires_view}>
-                            <TouchableOpacity style={[styles.horaires, styles.horaires_date]} onPress={handleToggle}>
-                                <Text style={styles.titre}>Lundi</Text>
-                                <TouchableOpacity style={styles.toggleButton} onPress={handleToggle}>
-                                    <Animated.View style={[styles.toggleTrack, { backgroundColor: trackColor }]} />
-                                    <Animated.View
-                                        style={[
-                                            styles.toggleCircle,
-                                            { backgroundColor: circleColor, transform: [{ translateX }] }
-                                        ]}
-                                    />
-                                </TouchableOpacity>
+                    </View>
+                    <View style={styles.horaires_view}>
+                        <TouchableOpacity style={[styles.horaires, styles.horaires_date]} onPress={handleToggle}>
+                            <Text style={styles.titre}>Lundi</Text>
+                            <TouchableOpacity style={styles.toggleButton} onPress={handleToggle}>
+                                <Animated.View style={[styles.toggleTrack, { backgroundColor: trackColor }]} />
+                                <Animated.View
+                                    style={[
+                                        styles.toggleCircle,
+                                        { backgroundColor: circleColor, transform: [{ translateX }] }
+                                    ]}
+                                />
                             </TouchableOpacity>
-                            <View style={styles.horaires}>
-                                <Text style={styles.horaires_texte}>08h00-18h00</Text>
-                                <Calendar_edit />
-                            </View>
+                        </TouchableOpacity>
+                        <View style={styles.horaires}>
+                            <Text style={styles.horaires_texte}>08h00-18h00</Text>
+                            <Calendar_edit />
                         </View>
-                        <View style={styles.horaires_view}>
-                            <TouchableOpacity style={[styles.horaires, styles.horaires_date]} onPress={handleToggle}>
-                                <Text style={styles.titre}>Lundi</Text>
-                                <TouchableOpacity style={styles.toggleButton} onPress={handleToggle}>
-                                    <Animated.View style={[styles.toggleTrack, { backgroundColor: trackColor }]} />
-                                    <Animated.View
-                                        style={[
-                                            styles.toggleCircle,
-                                            { backgroundColor: circleColor, transform: [{ translateX }] }
-                                        ]}
-                                    />
-                                </TouchableOpacity>
+                    </View>
+                    <View style={styles.horaires_view}>
+                        <TouchableOpacity style={[styles.horaires, styles.horaires_date]} onPress={handleToggle}>
+                            <Text style={styles.titre}>Lundi</Text>
+                            <TouchableOpacity style={styles.toggleButton} onPress={handleToggle}>
+                                <Animated.View style={[styles.toggleTrack, { backgroundColor: trackColor }]} />
+                                <Animated.View
+                                    style={[
+                                        styles.toggleCircle,
+                                        { backgroundColor: circleColor, transform: [{ translateX }] }
+                                    ]}
+                                />
                             </TouchableOpacity>
-                            <View style={styles.horaires}>
-                                <Text style={styles.horaires_texte}>08h00-18h00</Text>
-                                <Calendar_edit />
-                            </View>
+                        </TouchableOpacity>
+                        <View style={styles.horaires}>
+                            <Text style={styles.horaires_texte}>08h00-18h00</Text>
+                            <Calendar_edit />
                         </View>
-                        <View style={styles.horaires_view}>
-                            <TouchableOpacity style={[styles.horaires, styles.horaires_date]} onPress={handleToggle}>
-                                <Text style={styles.titre}>Lundi</Text>
-                                <TouchableOpacity style={styles.toggleButton} onPress={handleToggle}>
-                                    <Animated.View style={[styles.toggleTrack, { backgroundColor: trackColor }]} />
-                                    <Animated.View
-                                        style={[
-                                            styles.toggleCircle,
-                                            { backgroundColor: circleColor, transform: [{ translateX }] }
-                                        ]}
-                                    />
-                                </TouchableOpacity>
+                    </View>
+                    <View style={styles.horaires_view}>
+                        <TouchableOpacity style={[styles.horaires, styles.horaires_date]} onPress={handleToggle}>
+                            <Text style={styles.titre}>Lundi</Text>
+                            <TouchableOpacity style={styles.toggleButton} onPress={handleToggle}>
+                                <Animated.View style={[styles.toggleTrack, { backgroundColor: trackColor }]} />
+                                <Animated.View
+                                    style={[
+                                        styles.toggleCircle,
+                                        { backgroundColor: circleColor, transform: [{ translateX }] }
+                                    ]}
+                                />
                             </TouchableOpacity>
-                            <View style={[styles.horaires, styles.horaires_close]}>
-                                <Text style={styles.horaires_texte}>Fermé</Text>
-                            </View>
+                        </TouchableOpacity>
+                        <View style={[styles.horaires, styles.horaires_close]}>
+                            <Text style={styles.horaires_texte}>Fermé</Text>
                         </View>
-                        <View style={styles.horaires_view}>
-                            <TouchableOpacity style={[styles.horaires, styles.horaires_date]} onPress={handleToggle}>
-                                <Text style={styles.titre}>Lundi</Text>
-                                <TouchableOpacity style={styles.toggleButton} onPress={handleToggle}>
-                                    <Animated.View style={[styles.toggleTrack, { backgroundColor: trackColor }]} />
-                                    <Animated.View
-                                        style={[
-                                            styles.toggleCircle,
-                                            { backgroundColor: circleColor, transform: [{ translateX }] }
-                                        ]}
-                                    />
-                                </TouchableOpacity>
+                    </View>
+                    <View style={styles.horaires_view}>
+                        <TouchableOpacity style={[styles.horaires, styles.horaires_date]} onPress={handleToggle}>
+                            <Text style={styles.titre}>Lundi</Text>
+                            <TouchableOpacity style={styles.toggleButton} onPress={handleToggle}>
+                                <Animated.View style={[styles.toggleTrack, { backgroundColor: trackColor }]} />
+                                <Animated.View
+                                    style={[
+                                        styles.toggleCircle,
+                                        { backgroundColor: circleColor, transform: [{ translateX }] }
+                                    ]}
+                                />
                             </TouchableOpacity>
-                            <View style={[styles.horaires, styles.horaires_close]}>
-                                <Text style={styles.titre}>Fermé</Text>
-                            </View>
+                        </TouchableOpacity>
+                        <View style={[styles.horaires, styles.horaires_close]}>
+                            <Text style={styles.horaires_texte}>Fermé</Text>
                         </View>
                     </View>
                 </View>
+            </View>
+            <View style={styles.column}>
+                <Text style={styles.titre}>Image de couverture</Text>
+                <Vignette />
+            </View>
+            <View style={styles.column}>
+                <Text style={styles.titre}>Image de couverture</Text>
+                <Vignette />
+            </View>
+            <View style={styles.column}>
+                <Text style={styles.titre}>Galerie</Text>
+                <View style={styles.list_Sous_Vignette}>
+                    <SousVignette />
+                    <SousVignette />
+                    <SousVignette />
+                    <SousVignette />
+                </View>
+            </View>
+            <View style={styles.column}>
+                <Text style={styles.titre}>Menu habituel (si existant)</Text>
+                <View style={styles.list_Sous_Vignette}>
+                    <SousVignette />
+                    <SousVignette />
+                    <SousVignette />
+                    <SousVignette />
+                </View>
+            </View>
+            <View style={styles.column}>
+                <Text style={styles.titre}>Numéro de téléphone</Text>
+                <CustomTextInput />
+            </View>
+            <View style={styles.column}>
+                <Text style={styles.titre}>Email</Text>
+                <CustomTextInput />
+            </View>
+            <View style={styles.column}>
+                <Text style={styles.titre}>Liens Sociaux</Text>
+                <View style={styles.column}>
+                    <Lien />
+                    <Lien />
+                    <Lien />
+                </View>
+            </View>
+            <View style={styles.column}>
+                <View style={styles.column}>
+                    <Text style={styles.titre}>Localisation</Text>
+                    <View style={styles.localisation}>
+                        <TextInput
+                            style={[styles.input, styles.Costum1]}
+                            placeholder="Ex: Mariage de Aline & Christian"
+                        />
+                        <View style={styles.map}>
+                            <Map />
+                        </View>
+                    </View>
+                </View>
+                <TouchableOpacity onPress={handleCheckboxPress} style={styles.checkbox_block}>
+                    <TouchableOpacity style={styles.checkbox} onPress={handleCheckboxPress}>
+                        {isChecked && <View style={styles.checkbox_juste} ><Juste /></View>}
+                    </TouchableOpacity>
+                    <Text style={styles.label}>En créant un business, vous acceptez nos Termes et conditions</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Create2')}>
+                    <Bouton texte={'Créer mon Business'} />
+                </TouchableOpacity>
             </View>
         </ScrollView>
     );
@@ -228,11 +310,13 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         paddingHorizontal: 16,
-        paddingVertical: 26,
+        paddingBottom: 26,
         gap: 16,
         backgroundColor: '#fff'
     },
     categorie: {
+        paddingTop: 26,
+        paddingBottom: 16,
         display: 'flex',
         flexDirection: 'column',
         gap: 16
@@ -343,7 +427,74 @@ const styles = StyleSheet.create({
         lineHeight: 21.29,
         textAlign: 'left',
         color: '#767A90'
+    },
+    list_Sous_Vignette: {
+        display: 'flex',
+        flexDirection: 'row',
+        gap: 8,
+        justifyContent: 'space-between',
+    },
+    localisation: {
+        display: 'flex',
+        flexDirection: 'row'
+    },
+    map: {
+        padding: 10,
+        backgroundColor: '#041578',
+        borderTopEndRadius: 8,
+        borderBottomEndRadius: 8,
+        height: 50,
+        width: 50,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    Costum1: {
+        width: 325
+    },
+    checkbox_block: {
+        display: 'flex',
+        flexDirection: 'row',
+        gap: 8
+    },
+
+    checkbox: {
+        width: 24,
+        height: 24,
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 4,
+        justifyContent: 'center',
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center'
+    },
+    checkboxText: {
+        fontSize: 20,
+        color: '#007AFF',
+        backgroundColor: '#041578',
+        paddingHorizontal: 8
+    },
+    label: {
+        fontSize: 14,
+        fontWeight: '400',
+        marginLeft: 8,
+        color: '#1E2448'
+    },
+    checkbox_juste: {
+        width: 24,
+        height: 24,
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 4,
+        justifyContent: 'center',
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        backgroundColor: '#041578'
     }
 });
 
-module.exports = Feed
+module.exports = Create1
