@@ -4,6 +4,7 @@ import { Button, Text, View, Image, StyleSheet, TouchableOpacity } from 'react-n
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const Create1 = require('./screen/Create Business/Create1');
 const Create2 = require('./screen/Create Business/Create2');
@@ -202,13 +203,142 @@ export default function App() {
     return null; // ou un écran de chargement
   }
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="listeBusinessEmpty">
-        <Stack.Screen
-          name="Create1"
-          component={Create1}
-          options={{
-            headerTitle: 'Créer un Business',
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="listeBusinessEmpty">
+          <Stack.Screen
+            name="Create1"
+            component={Create1}
+            options={{
+              headerTitle: 'Créer un Business',
+              headerStyle: {
+                backgroundColor: '#041578',
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontFamily: 'TitilliumWeb-Regular',
+                fontWeight: 'bold',
+              },
+              headerLeft: () => (
+                <View style={styles.fleche}>
+                  <Arrow_left />
+                </View>
+              ),
+            }} />
+          <Stack.Screen name="Create2" component={Create2} options={{ headerShown: false, }} />
+          <Stack.Screen name="Create3" component={Create3} options={{ headerShown: false, }} />
+          <Stack.Screen name="Create4" component={Create4} options={{ headerShown: false, }} />
+          <Stack.Screen name="Create5" component={Create5} options={{ headerShown: false, }} />
+          <Stack.Screen name="Create6" component={Create6} options={{ headerShown: false, }} />
+          <Stack.Screen name="Create7" component={Create7} options={{ headerShown: false, }} />
+          <Stack.Screen name="Create8" component={Create8} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="listeBusiness" component={listeBusiness} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="listeBusinessEmpty" component={listeBusinessEmpty} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="Statistiques" component={Statistiques} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="Events" component={Events} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="Events_Details" component={Events_Details} options={{ headerShown: false, }} />
+          <Stack.Screen name="Event_Search_Events_10" component={Event_Search_Events_10} options={{ headerShown: false, }} />
+          <Stack.Screen name="List_of_participants" component={List_of_participants} options={{ headerShown: false, }} />
+          <Stack.Screen name="List_of_participants1" component={List_of_participants1} options={{ headerShown: false, }} />
+          <Stack.Screen name="Send_message_popup" component={Send_message_popup} options={{ headerShown: false, }} />
+          <Stack.Screen name="Successful" component={Successful} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="Profile" component={Profile} />
+
+          <Stack.Screen name="Chat" component={Chat} options={{ headerShown: false, }} />
+          <Stack.Screen name="ChatDetails" component={ChatDetails} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="MenuEvenement" component={MenuEvenement} options={{ headerShown: false, }} />
+          <Stack.Screen name="DeleteEvenement" component={DeleteEvenement} options={{ headerShown: false, }} />
+          <Stack.Screen name="EditEvent" component={EditEvent} options={{ headerShown: false, }} />
+          <Stack.Screen name="EditeEventSave" component={EditeEventSave} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="Profil1" component={Profil1} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="GestionDroits1" component={GestionDroits1} options={{ headerShown: false, }} />
+          <Stack.Screen name="GestionDroits2" component={GestionDroits2} options={{ headerShown: false, }} />
+          <Stack.Screen name="GestionDroits3" component={GestionDroits3} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="Support1" component={Support1} options={{ headerShown: false, }} />
+          <Stack.Screen name="Support2" component={Support2} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="Abonnement1" component={Abonnement1} options={{ headerShown: false, }} />
+          <Stack.Screen name="Abonnement2" component={Abonnement2} options={{ headerShown: false, }} />
+          <Stack.Screen name="Abonnement3" component={Abonnement3} options={{ headerShown: false, }} />
+          <Stack.Screen name="Abonnement5" component={Abonnement5} options={{ headerShown: false, }} />
+          <Stack.Screen name="Abonnement6" component={Abonnement6} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="CreateEvent" component={CreateEvent} options={{ headerShown: false, }} />
+          <Stack.Screen name="CreateEvent2" component={CreateEvent2} options={{ headerShown: false, }} />
+          <Stack.Screen name="CreateEvent3" component={CreateEvent3} options={{ headerShown: false, }} />
+          <Stack.Screen name="CreateEvent4" component={CreateEvent4} options={{ headerShown: false, }} />
+          <Stack.Screen name="CreateSuccess" component={CreateSuccess} options={{ headerShown: false, }} />
+
+
+          {/* Admin  */}
+
+          <Stack.Screen name="Dashboard_V1" component={Dashboard_V1}
+            options={{
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontFamily: 'TitilliumWeb-Regular',
+                fontWeight: 'bold',
+              },
+              headerLeft: () => (
+                <View style={styles.fleche}>
+                  <Arrow_left />
+                </View>
+              ),
+              //   <TouchableOpacity onPress={() => navigation.goBack()}>
+              //   <Image source={back} style={styles.back} />
+              // </TouchableOpacity>
+
+            }} />
+          <Stack.Screen name="Dashboard_V2" component={Dashboard_V2}
+            options={{
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontFamily: 'TitilliumWeb-Regular',
+                fontWeight: 'bold',
+              },
+              headerLeft: () => (
+                <View style={styles.fleche}>
+                  <Arrow_left />
+                </View>
+              ),
+              //   <TouchableOpacity onPress={() => navigation.goBack()}>
+              //   <Image source={back} style={styles.back} />
+              // </TouchableOpacity>
+
+            }} />
+          <Stack.Screen name="Dashboard_V3" component={Dashboard_V3}
+            options={{
+              headerTitle: ' ',
+              headerStyle: {
+                backgroundColor: '#1E2448',
+                elevation: 0
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontFamily: 'TitilliumWeb-Regular',
+                fontWeight: 'bold',
+              },
+              headerLeft: () => (
+                <View style={styles.fleche}>
+                  <Arrow_left />
+                </View>
+              ),
+            }} />
+
+          <Stack.Screen name="Event_Search_Events_01" component={Event_Search_Events_01} options={{
+            headerTitle: 'Tous les évènements',
             headerStyle: {
               backgroundColor: '#041578',
             },
@@ -222,106 +352,15 @@ export default function App() {
                 <Arrow_left />
               </View>
             ),
-          }} />
-        <Stack.Screen name="Create2" component={Create2} options={{ headerShown: false, }} />
-        <Stack.Screen name="Create3" component={Create3} options={{ headerShown: false, }} />
-        <Stack.Screen name="Create4" component={Create4} options={{ headerShown: false, }} />
-        <Stack.Screen name="Create5" component={Create5} options={{ headerShown: false, }} />
-        <Stack.Screen name="Create6" component={Create6} options={{ headerShown: false, }} />
-        <Stack.Screen name="Create7" component={Create7} options={{ headerShown: false, }} />
-        <Stack.Screen name="Create8" component={Create8} options={{ headerShown: false, }} />
-
-        <Stack.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false, }} />
-
-        <Stack.Screen name="listeBusiness" component={listeBusiness} options={{ headerShown: false, }} />
-
-        <Stack.Screen name="listeBusinessEmpty" component={listeBusinessEmpty} options={{ headerShown: false, }} />
-
-        <Stack.Screen name="Statistiques" component={Statistiques} options={{ headerShown: false, }} />
-
-        <Stack.Screen name="Events" component={Events} options={{ headerShown: false, }} />
-
-        <Stack.Screen name="Events_Details" component={Events_Details} options={{ headerShown: false, }} />
-        <Stack.Screen name="Event_Search_Events_10" component={Event_Search_Events_10} options={{ headerShown: false, }} />
-        <Stack.Screen name="List_of_participants" component={List_of_participants} options={{ headerShown: false, }} />
-        <Stack.Screen name="List_of_participants1" component={List_of_participants1} options={{ headerShown: false, }} />
-        <Stack.Screen name="Send_message_popup" component={Send_message_popup} options={{ headerShown: false, }} />
-        <Stack.Screen name="Successful" component={Successful} options={{ headerShown: false, }} />
-
-        <Stack.Screen name="Profile" component={Profile} />
-
-        <Stack.Screen name="Chat" component={Chat} options={{ headerShown: false, }} />
-        <Stack.Screen name="ChatDetails" component={ChatDetails} options={{ headerShown: false, }} />
-
-        <Stack.Screen name="MenuEvenement" component={MenuEvenement} options={{ headerShown: false, }} />
-        <Stack.Screen name="DeleteEvenement" component={DeleteEvenement} options={{ headerShown: false, }} />
-        <Stack.Screen name="EditEvent" component={EditEvent} options={{ headerShown: false, }} />
-        <Stack.Screen name="EditeEventSave" component={EditeEventSave} options={{ headerShown: false, }} />
-
-        <Stack.Screen name="Profil1" component={Profil1} options={{ headerShown: false, }} />
-
-        <Stack.Screen name="GestionDroits1" component={GestionDroits1} options={{ headerShown: false, }} />
-        <Stack.Screen name="GestionDroits2" component={GestionDroits2} options={{ headerShown: false, }} />
-        <Stack.Screen name="GestionDroits3" component={GestionDroits3} options={{ headerShown: false, }} />
-
-        <Stack.Screen name="Support1" component={Support1} options={{ headerShown: false, }} />
-        <Stack.Screen name="Support2" component={Support2} options={{ headerShown: false, }} />
-
-        <Stack.Screen name="Abonnement1" component={Abonnement1} options={{ headerShown: false, }} />
-        <Stack.Screen name="Abonnement2" component={Abonnement2} options={{ headerShown: false, }} />
-        <Stack.Screen name="Abonnement3" component={Abonnement3} options={{ headerShown: false, }} />
-        <Stack.Screen name="Abonnement5" component={Abonnement5} options={{ headerShown: false, }} />
-        <Stack.Screen name="Abonnement6" component={Abonnement6} options={{ headerShown: false, }} />
-
-        <Stack.Screen name="CreateEvent" component={CreateEvent} options={{ headerShown: false, }} />
-        <Stack.Screen name="CreateEvent2" component={CreateEvent2} options={{ headerShown: false, }} />
-        <Stack.Screen name="CreateEvent3" component={CreateEvent3} options={{ headerShown: false, }} />
-        <Stack.Screen name="CreateEvent4" component={CreateEvent4} options={{ headerShown: false, }} />
-        <Stack.Screen name="CreateSuccess" component={CreateSuccess} options={{ headerShown: false, }} />
-
-
-        {/* Admin  */}
-
-        <Stack.Screen name="Dashboard_V1" component={Dashboard_V1}
-          options={{
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontFamily: 'TitilliumWeb-Regular',
-              fontWeight: 'bold',
-            },
-            headerLeft: () => (
-              <View style={styles.fleche}>
-                <Arrow_left />
-              </View>
-            ),
             //   <TouchableOpacity onPress={() => navigation.goBack()}>
             //   <Image source={back} style={styles.back} />
             // </TouchableOpacity>
 
           }} />
-        <Stack.Screen name="Dashboard_V2" component={Dashboard_V2}
-          options={{
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontFamily: 'TitilliumWeb-Regular',
-              fontWeight: 'bold',
-            },
-            headerLeft: () => (
-              <View style={styles.fleche}>
-                <Arrow_left />
-              </View>
-            ),
-            //   <TouchableOpacity onPress={() => navigation.goBack()}>
-            //   <Image source={back} style={styles.back} />
-            // </TouchableOpacity>
-
-          }} />
-        <Stack.Screen name="Dashboard_V3" component={Dashboard_V3}
-          options={{
-            headerTitle: ' ',
+          <Stack.Screen name="Event_Search_Events_02" component={Event_Search_Events_02} options={{
+            headerTitle: 'Tous les évènements',
             headerStyle: {
-              backgroundColor: '#1E2448',
-              elevation: 0
+              backgroundColor: '#041578',
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -333,472 +372,435 @@ export default function App() {
                 <Arrow_left />
               </View>
             ),
+            //   <TouchableOpacity onPress={() => navigation.goBack()}>
+            //   <Image source={back} style={styles.back} />
+            // </TouchableOpacity>
+
+          }} />
+          <Stack.Screen name="Event_Search_Events_03" component={Event_Search_Events_03} options={{
+            headerTitle: 'Tous les évènements',
+            headerStyle: {
+              backgroundColor: '#041578',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontFamily: 'TitilliumWeb-Regular',
+              fontWeight: 'bold',
+            },
+            headerLeft: () => (
+              <View style={styles.fleche}>
+                <Arrow_left />
+              </View>
+            ),
+            //   <TouchableOpacity onPress={() => navigation.goBack()}>
+            //   <Image source={back} style={styles.back} />
+            // </TouchableOpacity>
+
+          }} />
+          <Stack.Screen name="Event_Search_Events_04" component={Event_Search_Events_04} options={{
+            headerTitle: 'Tous les évènements',
+            headerStyle: {
+              backgroundColor: '#041578',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontFamily: 'TitilliumWeb-Regular',
+              fontWeight: 'bold',
+            },
+            headerLeft: () => (
+              <View style={styles.fleche}>
+                <Arrow_left />
+              </View>
+            ),
+            //   <TouchableOpacity onPress={() => navigation.goBack()}>
+            //   <Image source={back} style={styles.back} />
+            // </TouchableOpacity>
+
+          }} />
+          <Stack.Screen name="Event_Search_Events_05" component={Event_Search_Events_05} options={{
+            headerTitle: 'Tous les évènements',
+            headerStyle: {
+              backgroundColor: '#041578',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontFamily: 'TitilliumWeb-Regular',
+              fontWeight: 'bold',
+            },
+            headerLeft: () => (
+              <View style={styles.fleche}>
+                <Arrow_left />
+              </View>
+            ),
+            //   <TouchableOpacity onPress={() => navigation.goBack()}>
+            //   <Image source={back} style={styles.back} />
+            // </TouchableOpacity>
+
+          }} />
+          <Stack.Screen name="Event_Search_Events_7" component={Event_Search_Events_7} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="Partners_Search_Partners_01" component={Partners_Search_Partners_01} options={{
+            headerTitle: 'Tous les évènements',
+            headerStyle: {
+              backgroundColor: '#041578',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontFamily: 'TitilliumWeb-Regular',
+              fontWeight: 'bold',
+            },
+            headerLeft: () => (
+              <View style={styles.fleche}>
+                <Arrow_left />
+              </View>
+            ),
+            //   <TouchableOpacity onPress={() => navigation.goBack()}>
+            //   <Image source={back} style={styles.back} />
+            // </TouchableOpacity>
+
+          }} />
+          <Stack.Screen name="Partners_Search_Partners_02" component={Partners_Search_Partners_02} options={{
+            headerTitle: 'Tous les évènements',
+            headerStyle: {
+              backgroundColor: '#041578',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontFamily: 'TitilliumWeb-Regular',
+              fontWeight: 'bold',
+            },
+            headerLeft: () => (
+              <View style={styles.fleche}>
+                <Arrow_left />
+              </View>
+            ),
+            //   <TouchableOpacity onPress={() => navigation.goBack()}>
+            //   <Image source={back} style={styles.back} />
+            // </TouchableOpacity>
+
+          }} />
+          <Stack.Screen name="Partners_Search_Partners_03" component={Partners_Search_Partners_03} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="Partners_Search_Partners_04" component={Partners_Search_Partners_04} options={{ headerShown: false, }} />
+          <Stack.Screen name="Profil" component={Profil} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="Partners_Send_Message_01" component={Partners_Send_Message_01} options={{ headerShown: false, }} />
+          <Stack.Screen name="Partners_Send_Message_02" component={Partners_Send_Message_02} options={{ headerShown: false, }} />
+          <Stack.Screen name="Partners_Send_Message_03" component={Partners_Send_Message_03} options={{ headerShown: false, }} />
+          <Stack.Screen name="Partners_Send_Message_04" component={Partners_Send_Message_04} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="Abonnement" component={Abonnement} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="Statistiques_01" component={Statistiques_01} options={{
+            headerTitle: 'Statistiques',
+            headerStyle: {
+              backgroundColor: '#041578',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontFamily: 'TitilliumWeb-Regular',
+              fontWeight: 'bold',
+            },
+            headerLeft: () => (
+              <View style={styles.fleche}>
+                <Arrow_left />
+              </View>
+            ),
+            //   <TouchableOpacity onPress={() => navigation.goBack()}>
+            //   <Image source={back} style={styles.back} />
+            // </TouchableOpacity>
+
+          }} />
+          <Stack.Screen name="Statistiques_02" component={Statistiques_02} options={{
+            headerTitle: 'Statistiques',
+            headerStyle: {
+              backgroundColor: '#041578',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontFamily: 'TitilliumWeb-Regular',
+              fontWeight: 'bold',
+            },
+            headerLeft: () => (
+              <View style={styles.fleche}>
+                <Arrow_left />
+              </View>
+            ),
+            //   <TouchableOpacity onPress={() => navigation.goBack()}>
+            //   <Image source={back} style={styles.back} />
+            // </TouchableOpacity>
+
+          }} />
+          <Stack.Screen name="Statistiques_03" component={Statistiques_03} options={{
+            headerTitle: 'Statistiques',
+            headerStyle: {
+              backgroundColor: '#041578',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontFamily: 'TitilliumWeb-Regular',
+              fontWeight: 'bold',
+            },
+            headerLeft: () => (
+              <View style={styles.fleche}>
+                <Arrow_left />
+              </View>
+            ),
+            //   <TouchableOpacity onPress={() => navigation.goBack()}>
+            //   <Image source={back} style={styles.back} />
+            // </TouchableOpacity>
+
+          }} />
+          <Stack.Screen name="Statistiques_04" component={Statistiques_04} options={{
+            headerTitle: 'Statistiques',
+            headerStyle: {
+              backgroundColor: '#041578',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontFamily: 'TitilliumWeb-Regular',
+              fontWeight: 'bold',
+            },
+            headerLeft: () => (
+              <View style={styles.fleche}>
+                <Arrow_left />
+              </View>
+            ),
+            //   <TouchableOpacity onPress={() => navigation.goBack()}>
+            //   <Image source={back} style={styles.back} />
+            // </TouchableOpacity>
+
+          }} />
+          <Stack.Screen name="Statistiques_05" component={Statistiques_05} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="Nouveautés" component={Nouveautés} options={{
+            headerTitle: 'Nouveautés',
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontFamily: 'TitilliumWeb-Regular',
+              fontWeight: 'bold',
+              color: '#041578'
+            },
+            headerLeft: () => (
+              <View style={styles.fleche}>
+                <Arrow_left />
+              </View>
+            ),
+            headerRight: () => (
+              <View style={styles.Right}>
+                <View style={styles.fleche}>
+                  <Search />
+                </View>
+                <View>
+                  <Image
+                    source={require('./assets/png/5.png')}
+                    style={styles.image} />
+                  <View style={{
+                    backgroundColor: '#219653',
+                    width: 15,
+                    height: 15,
+                    borderRadius: 20,
+                    borderWidth: 4,
+                    borderColor: '#fff',
+                    position: 'absolute',
+                    right: 0
+                  }}></View>
+                </View>
+              </View>
+            ),
+            //   <TouchableOpacity onPress={() => navigation.goBack()}>
+            //   <Image source={back} style={styles.back} />
+            // </TouchableOpacity>
+
+          }} />
+          <Stack.Screen name="Tous_les_evenements" component={Tous_les_evenements} options={{ headerShown: false, }} />
+          <Stack.Screen name="Homepage" component={Homepage} options={{
+            headerTitle: 'Nouveautés',
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontFamily: 'TitilliumWeb-Regular',
+              fontWeight: 'bold',
+              color: '#041578'
+            },
+            headerLeft: () => (
+              <View style={styles.fleche}>
+                <Arrow_left />
+              </View>
+            ),
+            headerRight: () => (
+              <View style={styles.Right}>
+                <View style={styles.fleche}>
+                  <Search />
+                </View>
+                <View>
+                  <Image
+                    source={require('./assets/png/5.png')}
+                    style={styles.image} />
+                  <View style={{
+                    backgroundColor: '#219653',
+                    width: 15,
+                    height: 15,
+                    borderRadius: 20,
+                    borderWidth: 4,
+                    borderColor: '#fff',
+                    position: 'absolute',
+                    right: 0
+                  }}></View>
+                </View>
+              </View>
+            ),
+            //   <TouchableOpacity onPress={() => navigation.goBack()}>
+            //   <Image source={back} style={styles.back} />
+            // </TouchableOpacity>
+
+          }} />
+          <Stack.Screen name="Menu" component={Menu} options={{ headerShown: false, }} />
+          <Stack.Screen name="Signaler_Event" component={Signaler_Event} options={{ headerShown: false, }} />
+          <Stack.Screen name="Signaler_Event_Réussite" component={Signaler_Event_Réussite} options={{ headerShown: false, }} />
+          <Stack.Screen name="Partager_Event" component={Partager_Event} options={{ headerShown: false, }} />
+          <Stack.Screen name="Supprimer_Event" component={Supprimer_Event} options={{ headerShown: false, }} />
+          <Stack.Screen name="Events_Statistiques_For_author" component={Events_Statistiques_For_author} options={{
+            headerTitle: 'Statistiques',
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontFamily: 'TitilliumWeb-Regular',
+              fontWeight: 'bold',
+              color: '#041578',
+            },
+            headerLeft: () => (
+              <View style={styles.fleche}>
+                <Arrow_left />
+              </View>
+            ),
+            headerStyle: {
+              borderBottomWidth: 1,
+              borderColor: '#041578',
+            }
+            //   <TouchableOpacity onPress={() => navigation.goBack()}>
+            //   <Image source={back} style={styles.back} />
+            // </TouchableOpacity>
+
           }} />
 
-        <Stack.Screen name="Event_Search_Events_01" component={Event_Search_Events_01} options={{
-          headerTitle: 'Tous les évènements',
-          headerStyle: {
-            backgroundColor: '#041578',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontFamily: 'TitilliumWeb-Regular',
-            fontWeight: 'bold',
-          },
-          headerLeft: () => (
-            <View style={styles.fleche}>
-              <Arrow_left />
-            </View>
-          ),
-          //   <TouchableOpacity onPress={() => navigation.goBack()}>
-          //   <Image source={back} style={styles.back} />
-          // </TouchableOpacity>
+          <Stack.Screen name="live" component={live} options={{ headerShown: false, }} />
+          <Stack.Screen name="Recherche" component={Recherche} options={{ headerShown: false, }} />
+          <Stack.Screen name="Resultat_recherche_Evenement" component={Resultat_recherche_Evenement} options={{ headerShown: false, }} />
+          <Stack.Screen name="Resultat_recherche_Evenement_Filtre" component={Resultat_recherche_Evenement_Filtre} options={{ headerShown: false, }} />
+          <Stack.Screen name="Resultat_recherche_Partenaires" component={Resultat_recherche_Partenaires} options={{ headerShown: false, }} />
+          <Stack.Screen name="Resultat_recherche_Personne" component={Resultat_recherche_Personne} options={{ headerShown: false, }} />
+          <Stack.Screen name="Resultat_recherche_Partenaires1" component={Resultat_recherche_Partenaires1} options={{ headerShown: false, }} />
 
-        }} />
-        <Stack.Screen name="Event_Search_Events_02" component={Event_Search_Events_02} options={{
-          headerTitle: 'Tous les évènements',
-          headerStyle: {
-            backgroundColor: '#041578',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontFamily: 'TitilliumWeb-Regular',
-            fontWeight: 'bold',
-          },
-          headerLeft: () => (
-            <View style={styles.fleche}>
-              <Arrow_left />
-            </View>
-          ),
-          //   <TouchableOpacity onPress={() => navigation.goBack()}>
-          //   <Image source={back} style={styles.back} />
-          // </TouchableOpacity>
-
-        }} />
-        <Stack.Screen name="Event_Search_Events_03" component={Event_Search_Events_03} options={{
-          headerTitle: 'Tous les évènements',
-          headerStyle: {
-            backgroundColor: '#041578',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontFamily: 'TitilliumWeb-Regular',
-            fontWeight: 'bold',
-          },
-          headerLeft: () => (
-            <View style={styles.fleche}>
-              <Arrow_left />
-            </View>
-          ),
-          //   <TouchableOpacity onPress={() => navigation.goBack()}>
-          //   <Image source={back} style={styles.back} />
-          // </TouchableOpacity>
-
-        }} />
-        <Stack.Screen name="Event_Search_Events_04" component={Event_Search_Events_04} options={{
-          headerTitle: 'Tous les évènements',
-          headerStyle: {
-            backgroundColor: '#041578',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontFamily: 'TitilliumWeb-Regular',
-            fontWeight: 'bold',
-          },
-          headerLeft: () => (
-            <View style={styles.fleche}>
-              <Arrow_left />
-            </View>
-          ),
-          //   <TouchableOpacity onPress={() => navigation.goBack()}>
-          //   <Image source={back} style={styles.back} />
-          // </TouchableOpacity>
-
-        }} />
-        <Stack.Screen name="Event_Search_Events_05" component={Event_Search_Events_05} options={{
-          headerTitle: 'Tous les évènements',
-          headerStyle: {
-            backgroundColor: '#041578',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontFamily: 'TitilliumWeb-Regular',
-            fontWeight: 'bold',
-          },
-          headerLeft: () => (
-            <View style={styles.fleche}>
-              <Arrow_left />
-            </View>
-          ),
-          //   <TouchableOpacity onPress={() => navigation.goBack()}>
-          //   <Image source={back} style={styles.back} />
-          // </TouchableOpacity>
-
-        }} />
-        <Stack.Screen name="Event_Search_Events_7" component={Event_Search_Events_7} options={{ headerShown: false, }} />
-
-        <Stack.Screen name="Partners_Search_Partners_01" component={Partners_Search_Partners_01} options={{
-          headerTitle: 'Tous les évènements',
-          headerStyle: {
-            backgroundColor: '#041578',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontFamily: 'TitilliumWeb-Regular',
-            fontWeight: 'bold',
-          },
-          headerLeft: () => (
-            <View style={styles.fleche}>
-              <Arrow_left />
-            </View>
-          ),
-          //   <TouchableOpacity onPress={() => navigation.goBack()}>
-          //   <Image source={back} style={styles.back} />
-          // </TouchableOpacity>
-
-        }} />
-        <Stack.Screen name="Partners_Search_Partners_02" component={Partners_Search_Partners_02} options={{
-          headerTitle: 'Tous les évènements',
-          headerStyle: {
-            backgroundColor: '#041578',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontFamily: 'TitilliumWeb-Regular',
-            fontWeight: 'bold',
-          },
-          headerLeft: () => (
-            <View style={styles.fleche}>
-              <Arrow_left />
-            </View>
-          ),
-          //   <TouchableOpacity onPress={() => navigation.goBack()}>
-          //   <Image source={back} style={styles.back} />
-          // </TouchableOpacity>
-
-        }} />
-        <Stack.Screen name="Partners_Search_Partners_03" component={Partners_Search_Partners_03} options={{ headerShown: false, }} />
-
-        <Stack.Screen name="Partners_Search_Partners_04" component={Partners_Search_Partners_04} options={{ headerShown: false, }} />
-        <Stack.Screen name="Profil" component={Profil} options={{ headerShown: false, }} />
-
-        <Stack.Screen name="Partners_Send_Message_01" component={Partners_Send_Message_01} options={{ headerShown: false, }} />
-        <Stack.Screen name="Partners_Send_Message_02" component={Partners_Send_Message_02} options={{ headerShown: false, }} />
-        <Stack.Screen name="Partners_Send_Message_03" component={Partners_Send_Message_03} options={{ headerShown: false, }} />
-        <Stack.Screen name="Partners_Send_Message_04" component={Partners_Send_Message_04} options={{ headerShown: false, }} />
-
-        <Stack.Screen name="Abonnement" component={Abonnement} options={{ headerShown: false, }} />
-
-        <Stack.Screen name="Statistiques_01" component={Statistiques_01} options={{
-          headerTitle: 'Statistiques',
-          headerStyle: {
-            backgroundColor: '#041578',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontFamily: 'TitilliumWeb-Regular',
-            fontWeight: 'bold',
-          },
-          headerLeft: () => (
-            <View style={styles.fleche}>
-              <Arrow_left />
-            </View>
-          ),
-          //   <TouchableOpacity onPress={() => navigation.goBack()}>
-          //   <Image source={back} style={styles.back} />
-          // </TouchableOpacity>
-
-        }} />
-        <Stack.Screen name="Statistiques_02" component={Statistiques_02} options={{
-          headerTitle: 'Statistiques',
-          headerStyle: {
-            backgroundColor: '#041578',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontFamily: 'TitilliumWeb-Regular',
-            fontWeight: 'bold',
-          },
-          headerLeft: () => (
-            <View style={styles.fleche}>
-              <Arrow_left />
-            </View>
-          ),
-          //   <TouchableOpacity onPress={() => navigation.goBack()}>
-          //   <Image source={back} style={styles.back} />
-          // </TouchableOpacity>
-
-        }} />
-        <Stack.Screen name="Statistiques_03" component={Statistiques_03} options={{
-          headerTitle: 'Statistiques',
-          headerStyle: {
-            backgroundColor: '#041578',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontFamily: 'TitilliumWeb-Regular',
-            fontWeight: 'bold',
-          },
-          headerLeft: () => (
-            <View style={styles.fleche}>
-              <Arrow_left />
-            </View>
-          ),
-          //   <TouchableOpacity onPress={() => navigation.goBack()}>
-          //   <Image source={back} style={styles.back} />
-          // </TouchableOpacity>
-
-        }} />
-        <Stack.Screen name="Statistiques_04" component={Statistiques_04} options={{
-          headerTitle: 'Statistiques',
-          headerStyle: {
-            backgroundColor: '#041578',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontFamily: 'TitilliumWeb-Regular',
-            fontWeight: 'bold',
-          },
-          headerLeft: () => (
-            <View style={styles.fleche}>
-              <Arrow_left />
-            </View>
-          ),
-          //   <TouchableOpacity onPress={() => navigation.goBack()}>
-          //   <Image source={back} style={styles.back} />
-          // </TouchableOpacity>
-
-        }} />
-        <Stack.Screen name="Statistiques_05" component={Statistiques_05} options={{ headerShown: false, }} />
-
-        <Stack.Screen name="Nouveautés" component={Nouveautés} options={{
-          headerTitle: 'Nouveautés',
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontFamily: 'TitilliumWeb-Regular',
-            fontWeight: 'bold',
-            color: '#041578'
-          },
-          headerLeft: () => (
-            <View style={styles.fleche}>
-              <Arrow_left />
-            </View>
-          ),
-          headerRight: () => (
-            <View style={styles.Right}>
+          <Stack.Screen name="Profil_Utilisateurs" component={Profil_Utilisateurs} options={{ headerShown: false, }} />
+          <Stack.Screen name="Amis" component={Amis} options={{
+            headerTitle: 'Amis de Eric Fotso ',
+            headerTintColor: '#041578',
+            headerTitleStyle: {
+              fontFamily: 'TitilliumWeb-Regular',
+              fontWeight: 'bold',
+            },
+            headerLeft: () => (
               <View style={styles.fleche}>
-                <Search />
+                <Arrow_left />
               </View>
-              <View>
-                <Image
-                  source={require('./assets/png/5.png')}
-                  style={styles.image} />
-                <View style={{
-                  backgroundColor: '#219653',
-                  width: 15,
-                  height: 15,
-                  borderRadius: 20,
-                  borderWidth: 4,
-                  borderColor: '#fff',
-                  position: 'absolute',
-                  right: 0
-                }}></View>
-              </View>
-            </View>
-          ),
-          //   <TouchableOpacity onPress={() => navigation.goBack()}>
-          //   <Image source={back} style={styles.back} />
-          // </TouchableOpacity>
+            ),
+            headerStyle: {
+              borderBottomWidth: 1,
+              borderColor: '#041578',
+            }
+            //   <TouchableOpacity onPress={() => navigation.goBack()}>
+            //   <Image source={back} style={styles.back} />
+            // </TouchableOpacity>
 
-        }} />
-        <Stack.Screen name="Tous_les_evenements" component={Tous_les_evenements} options={{ headerShown: false, }} />
-        <Stack.Screen name="Homepage" component={Homepage} options={{
-          headerTitle: 'Nouveautés',
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontFamily: 'TitilliumWeb-Regular',
-            fontWeight: 'bold',
-            color: '#041578'
-          },
-          headerLeft: () => (
-            <View style={styles.fleche}>
-              <Arrow_left />
-            </View>
-          ),
-          headerRight: () => (
-            <View style={styles.Right}>
+          }} />
+          <Stack.Screen name="Partenaires_card" component={Partenaires_card} options={{
+            headerTitle: 'Partenaires suivis par de Eric F... ',
+            headerTintColor: '#041578',
+            headerTitleStyle: {
+              fontFamily: 'TitilliumWeb-Regular',
+              fontWeight: 'bold',
+            },
+            headerLeft: () => (
               <View style={styles.fleche}>
-                <Search />
+                <Arrow_left />
               </View>
-              <View>
-                <Image
-                  source={require('./assets/png/5.png')}
-                  style={styles.image} />
-                <View style={{
-                  backgroundColor: '#219653',
-                  width: 15,
-                  height: 15,
-                  borderRadius: 20,
-                  borderWidth: 4,
-                  borderColor: '#fff',
-                  position: 'absolute',
-                  right: 0
-                }}></View>
+            ),
+            headerStyle: {
+              borderBottomWidth: 1,
+              borderColor: '#041578',
+            }
+          }} />
+          <Stack.Screen name="Partenaires_List" component={Partenaires_List} options={{
+            headerTitle: 'Partenaires suivis par de Eric F... ',
+            headerTintColor: '#041578',
+            headerTitleStyle: {
+              fontFamily: 'TitilliumWeb-Regular',
+              fontWeight: 'bold',
+            },
+            headerLeft: () => (
+              <View style={styles.fleche}>
+                <Arrow_left />
               </View>
-            </View>
-          ),
-          //   <TouchableOpacity onPress={() => navigation.goBack()}>
-          //   <Image source={back} style={styles.back} />
-          // </TouchableOpacity>
+            ),
+            headerStyle: {
+              borderBottomWidth: 1,
+              borderColor: '#041578',
+            }
+          }} />
 
-        }} />
-        <Stack.Screen name="Menu" component={Menu} options={{ headerShown: false, }} />
-        <Stack.Screen name="Signaler_Event" component={Signaler_Event} options={{ headerShown: false, }} />
-        <Stack.Screen name="Signaler_Event_Réussite" component={Signaler_Event_Réussite} options={{ headerShown: false, }} />
-        <Stack.Screen name="Partager_Event" component={Partager_Event} options={{ headerShown: false, }} />
-        <Stack.Screen name="Supprimer_Event" component={Supprimer_Event} options={{ headerShown: false, }} />
-        <Stack.Screen name="Events_Statistiques_For_author" component={Events_Statistiques_For_author} options={{
-          headerTitle: 'Statistiques',
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontFamily: 'TitilliumWeb-Regular',
-            fontWeight: 'bold',
-            color: '#041578',
-          },
-          headerLeft: () => (
-            <View style={styles.fleche}>
-              <Arrow_left />
-            </View>
-          ),
-          headerStyle: {
-            borderBottomWidth: 1,
-            borderColor: '#041578',
-          }
-          //   <TouchableOpacity onPress={() => navigation.goBack()}>
-          //   <Image source={back} style={styles.back} />
-          // </TouchableOpacity>
+          <Stack.Screen name="Resultat_recherche_Personne1" component={Resultat_recherche_Personne1} options={{ headerShown: false, }} />
+          <Stack.Screen name="Mes_invitations" component={Mes_invitations} options={{
+            headerTitle: 'Mes invitations',
+            headerTintColor: '#041578',
+            headerTitleStyle: {
+              fontFamily: 'TitilliumWeb-Regular',
+              fontWeight: 'bold',
+            },
+            headerLeft: () => (
+              <View style={styles.fleche}>
+                <Arrow_left />
+              </View>
+            ),
+            headerStyle: {
+              borderBottomWidth: 1,
+              borderColor: '#041578',
+            }
+          }} />
+          <Stack.Screen name="Notifications" component={Notifications} options={{
+            headerTitle: 'Notifications',
+            headerTintColor: '#041578',
+            headerTitleStyle: {
+              fontFamily: 'TitilliumWeb-Regular',
+              fontWeight: 'bold',
+            },
+            headerLeft: () => (
+              <View style={styles.fleche}>
+                <Arrow_left />
+              </View>
+            ),
+            headerStyle: {
+              borderBottomWidth: 1,
+              borderColor: '#041578',
+            }
+          }} />
 
-        }} />
-
-        <Stack.Screen name="live" component={live} options={{ headerShown: false, }} />
-        <Stack.Screen name="Recherche" component={Recherche} options={{ headerShown: false, }} />
-        <Stack.Screen name="Resultat_recherche_Evenement" component={Resultat_recherche_Evenement} options={{ headerShown: false, }} />
-        <Stack.Screen name="Resultat_recherche_Evenement_Filtre" component={Resultat_recherche_Evenement_Filtre} options={{ headerShown: false, }} />
-        <Stack.Screen name="Resultat_recherche_Partenaires" component={Resultat_recherche_Partenaires} options={{ headerShown: false, }} />
-        <Stack.Screen name="Resultat_recherche_Personne" component={Resultat_recherche_Personne} options={{ headerShown: false, }} />
-        <Stack.Screen name="Resultat_recherche_Partenaires1" component={Resultat_recherche_Partenaires1} options={{ headerShown: false, }} />
-
-        <Stack.Screen name="Profil_Utilisateurs" component={Profil_Utilisateurs} options={{ headerShown: false, }} />
-        <Stack.Screen name="Amis" component={Amis} options={{
-          headerTitle: 'Amis de Eric Fotso ',
-          headerTintColor: '#041578',
-          headerTitleStyle: {
-            fontFamily: 'TitilliumWeb-Regular',
-            fontWeight: 'bold',
-          },
-          headerLeft: () => (
-            <View style={styles.fleche}>
-              <Arrow_left />
-            </View>
-          ),
-          headerStyle: {
-            borderBottomWidth: 1,
-            borderColor: '#041578',
-          }
-          //   <TouchableOpacity onPress={() => navigation.goBack()}>
-          //   <Image source={back} style={styles.back} />
-          // </TouchableOpacity>
-
-        }} />
-        <Stack.Screen name="Partenaires_card" component={Partenaires_card} options={{
-          headerTitle: 'Partenaires suivis par de Eric F... ',
-          headerTintColor: '#041578',
-          headerTitleStyle: {
-            fontFamily: 'TitilliumWeb-Regular',
-            fontWeight: 'bold',
-          },
-          headerLeft: () => (
-            <View style={styles.fleche}>
-              <Arrow_left />
-            </View>
-          ),
-          headerStyle: {
-            borderBottomWidth: 1,
-            borderColor: '#041578',
-          }
-        }} />
-        <Stack.Screen name="Partenaires_List" component={Partenaires_List} options={{
-          headerTitle: 'Partenaires suivis par de Eric F... ',
-          headerTintColor: '#041578',
-          headerTitleStyle: {
-            fontFamily: 'TitilliumWeb-Regular',
-            fontWeight: 'bold',
-          },
-          headerLeft: () => (
-            <View style={styles.fleche}>
-              <Arrow_left />
-            </View>
-          ),
-          headerStyle: {
-            borderBottomWidth: 1,
-            borderColor: '#041578',
-          }
-        }} />
-
-        <Stack.Screen name="Resultat_recherche_Personne1" component={Resultat_recherche_Personne1} options={{ headerShown: false, }} />
-        <Stack.Screen name="Mes_invitations" component={Mes_invitations} options={{
-          headerTitle: 'Mes invitations',
-          headerTintColor: '#041578',
-          headerTitleStyle: {
-            fontFamily: 'TitilliumWeb-Regular',
-            fontWeight: 'bold',
-          },
-          headerLeft: () => (
-            <View style={styles.fleche}>
-              <Arrow_left />
-            </View>
-          ),
-          headerStyle: {
-            borderBottomWidth: 1,
-            borderColor: '#041578',
-          }
-        }} />
-        <Stack.Screen name="Notifications" component={Notifications} options={{
-          headerTitle: 'Notifications',
-          headerTintColor: '#041578',
-          headerTitleStyle: {
-            fontFamily: 'TitilliumWeb-Regular',
-            fontWeight: 'bold',
-          },
-          headerLeft: () => (
-            <View style={styles.fleche}>
-              <Arrow_left />
-            </View>
-          ),
-          headerStyle: {
-            borderBottomWidth: 1,
-            borderColor: '#041578',
-          }
-        }} />
-
-        <Stack.Screen name="Create_Event_01" component={Create_Event_01} options={{
-          headerTitle: 'Créer un évènement',
-          headerTintColor: '#041578',
-          headerTitleStyle: {
-            fontFamily: 'TitilliumWeb-Regular',
-            fontWeight: 'bold',
-          },
-          headerLeft: () => (
-            <View style={styles.fleche}>
-              <Arrow_left />
-            </View>
-          ),
-          headerStyle: {
-            borderBottomWidth: 1,
-            borderColor: '#041578',
-          }
-        }} />
-        {/* <Stack.Screen name="Create_Event_02" component={Create_Event_02} options={{ headerShown: false, }} />
+          <Stack.Screen name="Create_Event_01" component={Create_Event_01} options={{
+            headerTitle: 'Créer un évènement',
+            headerTintColor: '#041578',
+            headerTitleStyle: {
+              fontFamily: 'TitilliumWeb-Regular',
+              fontWeight: 'bold',
+            },
+            headerLeft: () => (
+              <View style={styles.fleche}>
+                <Arrow_left />
+              </View>
+            ),
+            headerStyle: {
+              borderBottomWidth: 1,
+              borderColor: '#041578',
+            }
+          }} />
+          {/* <Stack.Screen name="Create_Event_02" component={Create_Event_02} options={{ headerShown: false, }} />
         <Stack.Screen name="Create_Event_Paid" component={Create_Event_Paid} options={{ headerShown: false, }} />
         <Stack.Screen name="Create_Event_date" component={Create_Event_date} options={{ headerShown: false, }} />
         <Stack.Screen name="Create_Event_filled_hour" component={Create_Event_filled_hour} options={{ headerShown: false, }} />
@@ -807,8 +809,9 @@ export default function App() {
         <Stack.Screen name="Events_Details1" component={Events_Details1} options={{ headerShown: false, }} />
         <Stack.Screen name="Events_Details_For_author" component={Events_Details_For_author} options={{ headerShown: false, }} /> */}
 
-      </Stack.Navigator>
-    </NavigationContainer>
+        </Stack.Navigator>
+      </NavigationContainer>
+    </GestureHandlerRootView >
   );
 }
 

@@ -18,7 +18,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.jason_kitio.MboaEventsApp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -32,6 +33,11 @@
         "asset": "assets/fonts/Titillium_Web/TitilliumWeb-Bold.ttf",
         "name": "TitilliumWeb-Bold"
       }
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "78452987-11df-478a-9ecd-994625dfb69f"
+      }
+    }
   }
 }
