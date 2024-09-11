@@ -35,7 +35,7 @@ function Dashboard({ navigation },) {
                 }}>
                     <Arrow_left />
                 </TouchableOpacity>
-                <Text style={{ color: '#fff', fontSize: 20, fontWeight: '600' }}>Créer un Business</Text>
+                <Text style={{ color: '#fff', fontSize: 20, fontWeight: '600' }}>Mon Business</Text>
             </View>
             <ScrollView showsVerticalScrollIndicator={false} style={styles.page}>
                 <View style={styles.column}>
@@ -51,7 +51,7 @@ function Dashboard({ navigation },) {
                         Nom_style={styles.titre_Bold}
                         options={options}
                         selectedValue={'Selectionné'}
-                        setSelectedValue={'Selectionné'}
+                        setSelectedValue={setSelectedValue}
                         image={require('../../assets/png/Image (7).png')}
                         like={'+23 J’aime'}
                         commentaire={'+58 Commentaires'}
@@ -63,7 +63,7 @@ function Dashboard({ navigation },) {
                         nom={'Opium'}
                         options={options}
                         selectedValue={'Selectionner?'}
-                        setSelectedValue={'Selectionner?'}
+                        setSelectedValue={setSelectedValue}
                         image={require('../../assets/png/Image (7).png')}
                         like={'+23 J’aime'}
                         commentaire={'+58 Commentaires'}

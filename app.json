@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Mboa-Events-App",
-    "slug": "Mboa-Events-App",
+    "slug": "mboa-events-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -12,14 +12,20 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "y"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.jason_kitio.MboaEventsApp"
+      "package": "com.jason_kitio.MboaEventsApp",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDSbVuISLSDhaHavITYJjb-aO1jrmUk5ag"
+        }
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -36,8 +42,9 @@
     ],
     "extra": {
       "eas": {
-        "projectId": "78452987-11df-478a-9ecd-994625dfb69f"
+        "projectId": "d3af40fe-be03-4852-bff6-52ca53a2cf7e"
       }
-    }
+    },
+    "owner": "jason_kitio"
   }
 }

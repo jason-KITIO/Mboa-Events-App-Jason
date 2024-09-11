@@ -46,7 +46,9 @@ function Create7({ navigation },) {
                 }}>
                     <Arrow_left />
                 </TouchableOpacity>
-                <Text style={{ color: '#fff', fontSize: 20, fontWeight: '600' }}>Créer un Business</Text>
+                <Text style={{
+                    color: '#fff', fontSize: 20, fontWeight: '700', fontFamily: 'TitilliumWeb-Regular',
+                }}>Créer un Business</Text>
             </View>
             <ScrollView showsVerticalScrollIndicator={false} style={styles.page}>
                 <View style={{
@@ -191,7 +193,7 @@ function Create7({ navigation },) {
                                 source={require('../../assets/png/Image (6).png')}
                                 style={styles.Historique_Photo}
                             />
-                            <View style={styles.Historique_Photo_More}>
+                            <TouchableOpacity style={styles.Historique_Photo_More}>
                                 <Image
                                     source={require('../../assets/png/Image (6).png')}
                                     style={[styles.Historique_Photo, { width: '100%' }]}
@@ -199,7 +201,7 @@ function Create7({ navigation },) {
                                 <View style={styles.overlay}>
                                     <Text style={styles.overlayText}>+ 22</Text>
                                 </View>
-                            </View>
+                            </TouchableOpacity>
                         </View>
                     </View>
                     <View style={styles.column}>
@@ -427,7 +429,8 @@ const styles = StyleSheet.create({
     horaires_close: {
         backgroundColor: '#FEE9E9',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        width: '50%',
     },
     horaires_texte: {
         fontFamily: 'TitilliumWeb-Regular',
@@ -460,14 +463,14 @@ const styles = StyleSheet.create({
         gap: 8
     },
     Historique_Photo: {
-        width: '45%',
+        width: '48%',
         height: 120,
         borderRadius: 8,
         resizeMode: 'cover'
     },
     Historique_Photo_More: {
         position: 'relative',
-        width: '45%',
+        width: '48%',
         height: 120,
     },
     overlay: {

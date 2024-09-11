@@ -11,7 +11,7 @@ const Support2 = ({ navigation }) => {
         <View style={styles.container}>
             <StatusBar
                 barStyle="white-content"
-                backgroundColor="#1E2448"
+                backgroundColor="#041578"
                 translucent={false}
             />
             <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 20, backgroundColor: '#041578', paddingVertical: 10 }}>
@@ -27,12 +27,14 @@ const Support2 = ({ navigation }) => {
                 }}>
                     <Arrow_left />
                 </TouchableOpacity>
-                <Text style={{ color: '#fff', fontSize: 20, fontWeight: '600' }}>Contactez le support</Text>
+                <Text style={{
+                    color: '#fff', fontSize: 20, fontWeight: '700', fontFamily: 'TitilliumWeb-Regular',
+                }}>Contactez le support</Text>
             </View>
             <ScrollView
                 style={{
                     paddingHorizontal: 16,
-                    marginTop: 80,
+                    marginTop: 20,
                     width: '100%',
                 }}
             >
@@ -137,7 +139,7 @@ const styles = StyleSheet.create({
         padding: 8,
         alignItems: 'center',
         backgroundColor: '#F5F5F6',
-        borderRadius: 8,
+        borderRadius: 20,
         borderTopColor: '#219653',
         borderTopWidth: 2,
         borderTopLeftRadius: 8,

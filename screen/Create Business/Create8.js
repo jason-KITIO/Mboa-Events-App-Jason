@@ -13,50 +13,28 @@ import AnimationHaut from '../components/animationHaut'
 
 function Create8({ navigation },) {
     return (
-        <View>
-            <StatusBar
-                barStyle="white-content"
-                backgroundColor="#041578"
-                translucent={false}
-            />
-            <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 20, backgroundColor: '#041578', paddingVertical: 10 }}>
-                <TouchableOpacity onPress={() => navigation.goBack()} style={{
-                    width: 40,
-                    height: 40,
-                    backgroundColor: '#E6E8F2',
-                    marginLeft: 20,
-                    borderRadius: 50,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                }}>
-                    <Arrow_left />
-                </TouchableOpacity>
-                <Text style={{ color: '#fff', fontSize: 20, fontWeight: '600' }}>Créer un Business</Text>
-            </View>
-            <View style={styles.contain}>
-                <SafeAreaView>
-                    <AnimationHaut />
-                </SafeAreaView>
-                <View style={styles.sousContain}>
-                    <View style={styles.sousSousContain}>
-                        <View style={styles.animation}>
-                            <SafeAreaView>
-                                <Animation />
-                            </SafeAreaView>
-                        </View>
-                        <View style={styles.Texte}>
-                            <Text style={styles.Titre}>Félicitations</Text>
-                            <Text style={styles.SousTitre}>Le mot de passe a été renitialisé</Text>
-                        </View>
-                        <View style={styles.row}>
-                            <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
-                                <Bouton block={styles.botton_back_vert} texte={"Aller au tableau de bord"} />
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={() => navigation.navigate('Create6')}>
-                                <Bouton block={styles.botton_back} text={styles.botton_text} texte={"Retour à l'accueil"} />
-                            </TouchableOpacity>
-                        </View>
+        <View style={styles.contain}>
+            <SafeAreaView>
+                <AnimationHaut />
+            </SafeAreaView>
+            <View style={styles.sousContain}>
+                <View style={styles.sousSousContain}>
+                    <View style={styles.animation}>
+                        <SafeAreaView>
+                            <Animation />
+                        </SafeAreaView>
+                    </View>
+                    <View style={styles.Texte}>
+                        <Text style={styles.Titre}>Félicitations</Text>
+                        <Text style={styles.SousTitre}>Le mot de passe a été renitialisé</Text>
+                    </View>
+                    <View style={styles.row}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
+                            <Bouton block={styles.botton_back_vert} texte={"Aller au tableau de bord"} />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('Create6')}>
+                            <Bouton block={styles.botton_back} text={styles.botton_text} texte={"Retour à l'accueil"} />
+                        </TouchableOpacity>
                     </View>
                 </View>
             </View>
@@ -75,7 +53,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
-        height: '80%'
+        height: '80%',
+        marginTop: '15%'
     },
     sousSousContain: {
         display: 'flex',

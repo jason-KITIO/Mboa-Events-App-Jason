@@ -27,7 +27,7 @@ function Dashboard({ navigation },) {
                 }}>
                     <Arrow_left />
                 </TouchableOpacity>
-                <Text style={{ color: '#fff', fontSize: 20, fontWeight: '600' }}>Créer un Business</Text>
+                <Text style={{ color: '#fff', fontSize: 20, fontWeight: '600' }}>Mon Business</Text>
             </View>
             <View style={styles.page}>
                 <View style={styles.column}>
@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
         gap: 16,
         backgroundColor: '#fff',
         alignItems: 'center',
+        height: '90%'
     },
     column: {
         display: 'flex',

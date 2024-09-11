@@ -47,9 +47,9 @@ function Event({ navigation },) {
             <Slide />
             <View style={styles.column}>
                 <View style={styles.haut}>
-                    <View style={styles.droite}>
-                        <Text style={styles.droite_text}>Détails</Text>
-                    </View>
+                    <TouchableOpacity style={styles.droite}>
+                        <Text style={styles.droite_text} onPress={() => navigation.navigate('Events_Details')}> Détails</Text>
+                    </TouchableOpacity>
                     <View style={styles.gauche}>
                         <Text style={styles.gauche_text}>Statistiques</Text>
                         <View style={styles.boton}></View>

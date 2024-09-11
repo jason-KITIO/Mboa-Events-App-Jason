@@ -63,7 +63,9 @@ function Create5({ navigation },) {
                 }}>
                     <Arrow_left />
                 </TouchableOpacity>
-                <Text style={{ color: '#fff', fontSize: 20, fontWeight: '600' }}>Créer un Business</Text>
+                <Text style={{
+                    color: '#fff', fontSize: 20, fontWeight: '700', fontFamily: 'TitilliumWeb-Regular',
+                }}>Créer un Business</Text>
             </View>
             <ScrollView showsVerticalScrollIndicator={false} style={styles.page}>
                 <View style={styles.categorie}>

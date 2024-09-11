@@ -27,7 +27,9 @@ function Chat({ navigation }) {
                 }}>
                     <Arrow_left />
                 </TouchableOpacity>
-                <Text style={{ color: '#fff', fontSize: 20, fontWeight: '600' }}>Créer un Business</Text>
+                <Text style={{
+                    color: '#fff', fontSize: 20, fontWeight: '700', fontFamily: 'TitilliumWeb-Regular',
+                }}>Message avec les Utilisateurs</Text>
             </View>
             <ScrollView
                 style={{

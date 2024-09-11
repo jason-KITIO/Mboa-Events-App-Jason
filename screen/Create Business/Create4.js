@@ -61,7 +61,9 @@ function Create4({ navigation },) {
                 }}>
                     <Arrow_left />
                 </TouchableOpacity>
-                <Text style={{ color: '#fff', fontSize: 20, fontWeight: '600' }}>Créer un Business</Text>
+                <Text style={{
+                    color: '#fff', fontSize: 20, fontWeight: '700', fontFamily: 'TitilliumWeb-Regular',
+                }}>Créer un Business</Text>
             </View>
             <ScrollView showsVerticalScrollIndicator={false} style={styles.page}>
                 <View style={styles.categorie}>
@@ -178,7 +180,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: '#F5F5F6',
-        width: 150,
+        width: '50%',
         height: 50,
         padding: 8,
         borderRadius: 8

@@ -60,6 +60,56 @@ const CreateEvent3 = require('./screen/CreateEvent/CreateEvent3')
 const CreateEvent4 = require('./screen/CreateEvent/CreateEvent4')
 const CreateSuccess = require('./screen/CreateEvent/CreateSuccess')
 
+// Design
+
+const Onboarding02 = require('./screen/Onboarding/Onboarding02')
+const Onboarding03 = require('./screen/Onboarding/Onboarding03')
+const Onboarding04 = require('./screen/Onboarding/Onboarding04')
+const Onboarding5 = require('./screen/Onboarding/Onboarding5')
+
+const Logins = require('./screen/Login & Register/Logins')
+const Register1 = require('./screen/Login & Register/Register1')
+const Register2 = require('./screen/Login & Register/Register2')
+const Register3 = require('./screen/Login & Register/Register3')
+const Register4 = require('./screen/Login & Register/Register4')
+
+const Forgot1 = require('./screen/Forgot Password/Forgot1')
+const Forgot2 = require('./screen/Forgot Password/Forgot2')
+const Forgot3 = require('./screen/Forgot Password/Forgot3')
+const Forgot4 = require('./screen/Forgot Password/Forgot4')
+
+const accueil = require('./screen/Home, Network, Catalog & Drawer/accueil')
+const boitedenuit = require('./screen/Home, Network, Catalog & Drawer/boitedenuit')
+const catalogue = require('./screen/Home, Network, Catalog & Drawer/catalogue')
+const catalogueProffesionel = require('./screen/Home, Network, Catalog & Drawer/catalogueProffesionel')
+const cataloguebynight = require('./screen/Home, Network, Catalog & Drawer/cataloguebynight')
+const cataloguesante = require('./screen/Home, Network, Catalog & Drawer/cataloguesante')
+const comment = require('./screen/Home, Network, Catalog & Drawer/comment')
+const profil01 = require('./screen/Home, Network, Catalog & Drawer/profil')
+const profil11 = require('./screen/Home, Network, Catalog & Drawer/profil1')
+const reseau = require('./screen/Home, Network, Catalog & Drawer/reseau')
+const reseau2 = require('./screen/Home, Network, Catalog & Drawer/reseau2')
+const tabbar = require('./screen/Home, Network, Catalog & Drawer/tabbar')
+const topnavigator = require('./screen/Home, Network, Catalog & Drawer/topnavigator')
+
+const Event1 = require('./screen/Create Event & Event Details/Event1')
+const Event2 = require('./screen/Create Event & Event Details/Event2')
+
+const CreateEventDesign = require('./screen/CreateEvent1/CreateEvent')
+const CreateEventDesign2 = require('./screen/CreateEvent1/CreateEvent2')
+const CreateEventDesign3 = require('./screen/CreateEvent1/CreateEvent3')
+const CreateEventDesign4 = require('./screen/CreateEvent1/CreateEvent4')
+const CreateSuccessDesign = require('./screen/CreateEvent1/CreateSuccess')
+
+
+const ChatDesign = require('./screen/Chat1/Chat')
+const ChatDetailsDesign = require('./screen/Chat1/ChatDetails')
+
+
+
+
+
+
 // Admin 
 
 const Dashboard_V1 = require('./screen/Admin/Create Business & Dashboard/Dashboard')
@@ -205,7 +255,7 @@ export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="listeBusinessEmpty">
+        <Stack.Navigator initialRouteName="Onboarding02">
           <Stack.Screen
             name="Create1"
             component={Create1}
@@ -265,6 +315,7 @@ export default function App() {
           <Stack.Screen name="GestionDroits1" component={GestionDroits1} options={{ headerShown: false, }} />
           <Stack.Screen name="GestionDroits2" component={GestionDroits2} options={{ headerShown: false, }} />
           <Stack.Screen name="GestionDroits3" component={GestionDroits3} options={{ headerShown: false, }} />
+          <Stack.Screen name="GestionDroits4" component={GestionDroits4} options={{ headerShown: false, }} />
 
           <Stack.Screen name="Support1" component={Support1} options={{ headerShown: false, }} />
           <Stack.Screen name="Support2" component={Support2} options={{ headerShown: false, }} />
@@ -280,6 +331,44 @@ export default function App() {
           <Stack.Screen name="CreateEvent3" component={CreateEvent3} options={{ headerShown: false, }} />
           <Stack.Screen name="CreateEvent4" component={CreateEvent4} options={{ headerShown: false, }} />
           <Stack.Screen name="CreateSuccess" component={CreateSuccess} options={{ headerShown: false, }} />
+
+          {/* Admin  */}
+
+          <Stack.Screen name="Onboarding02" component={Onboarding02} options={{ headerShown: false, }} />
+          <Stack.Screen name="Onboarding03" component={Onboarding03} options={{ headerShown: false, }} />
+          <Stack.Screen name="Onboarding04" component={Onboarding04} options={{ headerShown: false, }} />
+          <Stack.Screen name="Onboarding5" component={Onboarding5} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="Logins" component={Logins} options={{ headerShown: false, }} />
+          <Stack.Screen name="Register1" component={Register1} options={{ headerShown: false, }} />
+          <Stack.Screen name="Register2" component={Register2} options={{ headerShown: false, }} />
+          <Stack.Screen name="Register3" component={Register3} options={{ headerShown: false, }} />
+          <Stack.Screen name="Register4" component={Register4} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="Forgot1" component={Forgot1} options={{ headerShown: false, }} />
+          <Stack.Screen name="Forgot2" component={Forgot2} options={{ headerShown: false, }} />
+          <Stack.Screen name="Forgot3" component={Forgot3} options={{ headerShown: false, }} />
+          <Stack.Screen name="Forgot4" component={Forgot4} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="TopNavigator" component={topnavigator} options={{ headerShown: false }} />
+          <Stack.Screen name="Boitedenuit" component={boitedenuit} options={{ headerShown: false }} />
+          <Stack.Screen name="Reseau2" component={reseau2} options={{ headerShown: false }} />
+          <Stack.Screen name="Profil01" component={profil01} options={{ headerShown: false }} />
+          <Stack.Screen name="Profil11" component={profil11} options={{ headerShown: false }} />
+          <Stack.Screen name="Comment" component={comment} options={{ headerShown: false }} />
+
+          <Stack.Screen name="Event1" component={Event1} options={{ headerShown: false }} />
+          <Stack.Screen name="Event2" component={Event2} options={{ headerShown: false }} />
+
+
+          <Stack.Screen name="CreateEventDesign" component={CreateEventDesign} options={{ headerShown: false, }} />
+          <Stack.Screen name="CreateEventDesign2" component={CreateEventDesign2} options={{ headerShown: false, }} />
+          <Stack.Screen name="CreateEventDesign3" component={CreateEventDesign3} options={{ headerShown: false, }} />
+          <Stack.Screen name="CreateEventDesign4" component={CreateEventDesign4} options={{ headerShown: false, }} />
+          <Stack.Screen name="CreateSuccessDesign" component={CreateSuccessDesign} options={{ headerShown: false, }} />
+
+          <Stack.Screen name="ChatDesign" component={ChatDesign} options={{ headerShown: false, }} />
+          <Stack.Screen name="ChatDetailsDesign" component={ChatDetailsDesign} options={{ headerShown: false, }} />
 
 
           {/* Admin  */}

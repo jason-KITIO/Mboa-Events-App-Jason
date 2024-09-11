@@ -37,7 +37,7 @@ const CreateEvent4 = ({ navigation }) => {
         <View style={styles.container}>
             <StatusBar
                 barStyle="white-content"
-                backgroundColor="#1E2448"
+                backgroundColor="#041578"
                 translucent={false}
             />
             <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 20, backgroundColor: '#041578', paddingVertical: 10 }}>
@@ -53,7 +53,9 @@ const CreateEvent4 = ({ navigation }) => {
                 }}>
                     <Arrow_left />
                 </TouchableOpacity>
-                <Text style={{ color: '#fff', fontSize: 20, fontWeight: '600' }}>Gestion des droits</Text>
+                <Text style={{
+                    color: '#fff', fontSize: 20, fontWeight: '700', fontFamily: 'TitilliumWeb-Regular',
+                }}>Créer un évènement</Text>
             </View>
             <ScrollView
                 style={{
@@ -211,7 +213,7 @@ const CreateEvent4 = ({ navigation }) => {
                 </View>
 
                 <View style={{ marginTop: 40, }}>
-                    <TouchableOpacity style={styles.valid} onPress={()=>navigation.navigate('CreateSuccess')}>
+                    <TouchableOpacity style={styles.valid} onPress={() => navigation.navigate('CreateSuccess')}>
                         <Text style={{ color: '#ffffff', fontSize: 16, fontWeight: '700', }}>Créer un évènement</Text>
                     </TouchableOpacity>
                 </View>

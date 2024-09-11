@@ -37,7 +37,9 @@ function Event({ navigation },) {
                 }}>
                     <Arrow_left />
                 </TouchableOpacity>
-                <Text style={{ color: '#fff', fontSize: 20, fontWeight: '600' }}>Gestion des droits</Text>
+                <Text style={{
+                    color: '#fff', fontSize: 20, fontWeight: '700', fontFamily: 'TitilliumWeb-Regular',
+                }}>Mes Evènements</Text>
             </View>
             <ScrollView showsVerticalScrollIndicator={false} style={styles.page}>
                 <View style={styles.column}>
@@ -91,7 +93,7 @@ function Event({ navigation },) {
                     />
                 </View>
             </ScrollView>
-            <TouchableOpacity onPress={() => navigation.navigate('CreateEvent')} style={{ position: 'absolute', zIndex: 3, bottom: 10, right: 10 }}>
+            <TouchableOpacity onPress={() => navigation.navigate('CreateEvent')} style={{ position: 'absolute', zIndex: 3, bottom: 70, right: 10 }}>
                 <Button1 />
             </TouchableOpacity>
         </View>
@@ -102,7 +104,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         paddingHorizontal: 16,
-        // paddingBottom: 26,
+        marginBottom: 56,
         gap: 16,
         backgroundColor: '#fff',
         // alignItems: 'center',

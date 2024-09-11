@@ -30,7 +30,9 @@ function Statistique({ navigation },) {
                 }}>
                     <Arrow_left />
                 </TouchableOpacity>
-                <Text style={{ color: '#fff', fontSize: 20, fontWeight: '600' }}>Créer un Business</Text>
+                <Text style={{
+                    color: '#fff', fontSize: 20, fontWeight: '700', fontFamily: 'TitilliumWeb-Regular',
+                }}>Toutes les Statistiques</Text>
             </View>
             <ScrollView showsVerticalScrollIndicator={false} style={styles.page}>
                 <Text style={styles.Titre}>Statistiques par année</Text>
@@ -40,7 +42,7 @@ function Statistique({ navigation },) {
                             <ListeDeroulante />
                         </SafeAreaView>
                     </View>
-                    <View style={styles.ordonne}>
+                    <ScrollView showsHorizontalScrollIndicator={false} horizontal={true} style={styles.ordonne}>
                         <View style={styles.Block_Valeur}>
                             <Text style={styles.Valeur}>0</Text>
                             <Text style={styles.Valeur}>500</Text>
@@ -87,7 +89,7 @@ function Statistique({ navigation },) {
                                 <Text style={styles.mois}>Dec</Text>
                             </View>
                         </View>
-                    </View>
+                    </ScrollView>
                     <View style={styles.Block_Partipant}>
                         <View>
                             <Text style={styles.titre}>Participation présumées</Text>
@@ -118,7 +120,7 @@ function Statistique({ navigation },) {
                             <Arrow_down1 />
                         </View>
                     </View>
-                    <View style={styles.ordonne}>
+                    <ScrollView showsHorizontalScrollIndicator={false} horizontal={true} style={styles.ordonne}>
                         <View style={styles.Block_Valeur}>
                             <Text style={styles.Valeur}>0</Text>
                             <Text style={styles.Valeur}>500</Text>
@@ -142,14 +144,17 @@ function Statistique({ navigation },) {
                                 <Graph Haut={{ height: '14%', }} Bas={{ height: '85%', }} text={'14%'} />
                             </View>
 
-                            <View style={styles.Block_mois}>
+                            <View style={[styles.Block_mois, {
+                                width: '95%',
+                                paddingLeft: '12%',
+                            }]}>
                                 <Text style={styles.mois}>12 Jan</Text>
                                 <Text style={styles.mois}>18 Jui</Text>
                                 <Text style={styles.mois}>21 Jan</Text>
                                 <Text style={styles.mois}>31 Jan</Text>
                             </View>
                         </View>
-                    </View>
+                    </ScrollView>
                     <View style={styles.Block_Partipant}>
                         <View>
                             <Text style={styles.titre}>Participation présumées</Text>
@@ -258,7 +263,8 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         gap: 50,
-        paddingLeft: 30,
+        width: '60%',
+        paddingLeft: '12%',
         justifyContent: 'space-evenly'
     },
     mois: {

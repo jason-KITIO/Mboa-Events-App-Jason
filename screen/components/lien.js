@@ -40,9 +40,8 @@ const styles = StyleSheet.create({
   picker: {
     height: 50,
     width: 150,
-  },
-  Costum: {
-    width: '32%',
+    backgroundColor: '#F5F5F6',
+    borderRadius: 8,
   },
   Add: {
     padding: 10,
@@ -53,6 +52,14 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  input: {
+    height: 50,
+    width: '40%',
+    borderRadius: 8,
+    padding: 16,
+    fontSize: 16,
+    backgroundColor: '#F5F5F6',
   }
 });
 

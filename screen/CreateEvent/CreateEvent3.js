@@ -34,9 +34,10 @@ const CreateEvent3 = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
+
             <StatusBar
                 barStyle="white-content"
-                backgroundColor="#1E2448"
+                backgroundColor="#041578"
                 translucent={false}
             />
             <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 20, backgroundColor: '#041578', paddingVertical: 10 }}>
@@ -52,7 +53,9 @@ const CreateEvent3 = ({ navigation }) => {
                 }}>
                     <Arrow_left />
                 </TouchableOpacity>
-                <Text style={{ color: '#fff', fontSize: 20, fontWeight: '600' }}>Gestion des droits</Text>
+                <Text style={{
+                    color: '#fff', fontSize: 20, fontWeight: '700', fontFamily: 'TitilliumWeb-Regular',
+                }}>Créer un évènement</Text>
             </View>
             <ScrollView
                 style={{
@@ -95,7 +98,7 @@ const CreateEvent3 = ({ navigation }) => {
                     </View>
                     <View style={styles.textInput}>
                         <Text style={styles.label}>Nom de l'évènement</Text>
-                        <CustomTextInput title="Ex: Mariage de Aline & Christian"/>
+                        <CustomTextInput title="Ex: Mariage de Aline & Christian" />
                     </View>
                     <View style={styles.textInput}>
                         <Text style={styles.label}>Image de couverture</Text>
@@ -162,7 +165,7 @@ const CreateEvent3 = ({ navigation }) => {
                             flexDirection: 'row',
                             gap: 5,
                         }}>
-                            <TouchableOpacity style={[styles.button, { backgroundColor: '#F2F2F2', }]} onPress={()=>navigation.navigate('CreateEvent')}>
+                            <TouchableOpacity style={[styles.button, { backgroundColor: '#F2F2F2', }]} onPress={() => navigation.navigate('CreateEvent')}>
                                 <Payant />
                                 <Text>Gratuit</Text>
                             </TouchableOpacity>
@@ -174,7 +177,7 @@ const CreateEvent3 = ({ navigation }) => {
                     </View>
                     <View style={styles.textInput}>
                         <Text style={styles.label}>Entrer le montant</Text>
-                        <CustomTextInput title="Entrer le montant ici" unit="XFA" type="numeric"/>
+                        <CustomTextInput title="Entrer le montant ici" unit="XFA" type="numeric" />
                     </View>
                     <View style={styles.textInput}>
                         <Text style={styles.label}>Proposez vous un menu ?</Text>
@@ -204,7 +207,7 @@ const CreateEvent3 = ({ navigation }) => {
                 </View>
 
                 <View style={{ marginTop: 40, }}>
-                    <TouchableOpacity style={styles.valid} onPress={()=>navigation.navigate('CreateEvent4')}>
+                    <TouchableOpacity style={styles.valid} onPress={() => navigation.navigate('CreateEvent4')}>
                         <Text style={{ color: '#ffffff', fontSize: 16, fontWeight: '700', }}>Créer un évènement</Text>
                     </TouchableOpacity>
                 </View>

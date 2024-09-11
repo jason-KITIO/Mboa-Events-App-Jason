@@ -14,7 +14,7 @@ const GestionDroits2 = ({ navigation }) => {
         <View style={styles.container}>
             <StatusBar
                 barStyle="white-content"
-                backgroundColor="#1E2448"
+                backgroundColor="#041578"
                 translucent={false}
             />
             <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 20, backgroundColor: '#041578', paddingVertical: 10 }}>
@@ -30,7 +30,9 @@ const GestionDroits2 = ({ navigation }) => {
                 }}>
                     <Arrow_left />
                 </TouchableOpacity>
-                <Text style={{ color: '#fff', fontSize: 20, fontWeight: '600' }}>Gestion des droits</Text>
+                <Text style={{
+                    color: '#fff', fontSize: 20, fontWeight: '700', fontFamily: 'TitilliumWeb-Regular',
+                }}>Gestion des droits</Text>
             </View>
             <ScrollView
                 style={{

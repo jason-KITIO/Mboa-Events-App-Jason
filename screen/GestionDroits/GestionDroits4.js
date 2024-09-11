@@ -21,7 +21,7 @@ const GestionDroits4 = ({ navigation }) => {
         <View style={styles.container}>
             <StatusBar
                 barStyle="white-content"
-                backgroundColor="#1E2448"
+                backgroundColor="#041578"
                 translucent={false}
             />
 
@@ -38,7 +38,9 @@ const GestionDroits4 = ({ navigation }) => {
                 }}>
                     <Arrow_left />
                 </TouchableOpacity>
-                <Text style={{ color: '#fff', fontSize: 20, fontWeight: '600' }}>Gestion des droits</Text>
+                <Text style={{
+                    color: '#fff', fontSize: 20, fontWeight: '700', fontFamily: 'TitilliumWeb-Regular',
+                }}>Modifier les droits</Text>
             </View>
             <ScrollView
                 style={{
@@ -146,11 +148,11 @@ const GestionDroits4 = ({ navigation }) => {
                     </View>
 
                     <View style={styles.buttons}>
-                        <TouchableOpacity style={[styles.button, { backgroundColor: '#E6E8F2', }]}>
+                        <TouchableOpacity style={[styles.button, { backgroundColor: '#E6E8F2', }]} onPress={() => navigation.goBack()}>
                             <Text style={{ fontSize: 16, color: '#041578', fontWeight: '700', }}>Annuler</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={[styles.button, { backgroundColor: '#041578', }]}>
-                            <Text style={{ fontSize: 16, color: '#fff', fontWeight: '700', }}>Sauvegarder</Text>
+                            <Text style={{ fontSize: 16, color: '#fff', fontWeight: '700', }} onPress={() => navigation.navigate('Dashboard')}>Sauvegarder</Text>
                         </TouchableOpacity>
                     </View>
                 </View>

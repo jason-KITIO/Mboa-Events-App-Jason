@@ -43,7 +43,9 @@ function Create6({ navigation },) {
                 }}>
                     <Arrow_left />
                 </TouchableOpacity>
-                <Text style={{ color: '#fff', fontSize: 20, fontWeight: '600' }}>Créer un Business</Text>
+                <Text style={{
+                    color: '#fff', fontSize: 20, fontWeight: '700', fontFamily: 'TitilliumWeb-Regular',
+                }}>Créer un Business</Text>
             </View>
             <ScrollView showsVerticalScrollIndicator={false} style={styles.page}>
                 <View style={styles.categorie}>
@@ -150,6 +152,7 @@ const styles = StyleSheet.create({
     },
     Costum1: {
         width: '82%',
+        backgroundColor: '#f5f5f6'
     },
     checkbox_block: {
         display: 'flex',
@@ -194,6 +197,14 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         backgroundColor: '#041578'
+    },
+    input: {
+        height: 50,
+        width: '100%',
+        borderRadius: 8, // Correction: borderRadius était défini deux fois
+        padding: 16,
+        fontSize: 16,
+        backgroundColor: '#F5F5F6',
     }
 });
 
